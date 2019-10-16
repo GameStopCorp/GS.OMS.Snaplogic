@@ -1,0 +1,203 @@
+{
+    gamestop: {
+        email: {
+            recipient: 'christophersoliman@gamestop.com',
+            sender: 'snapLogic_notification@gamestop.com',
+            cc: 'OMSDevTeam@gamestop.com',
+            subject: 'SnapLogic Production ERROR'
+        },
+        logging:{
+            sourceGroup: 'OMS',
+            environment: 'prod',
+            application: 'gs.SnapLogic.OMS_BOPS_Pipeline'
+        },
+        publish: {
+            pubKeyName: 'BOPS_pubnub_pub_prod_001',
+            subKeyName: 'BOPS_pubnub_sub_prod_001',
+            meta: '{"language":"french"}'
+        },
+        s3: {
+            account: 'gs-aws-omsevents-us-east-1-prod'
+        },
+        abandonedordercancel: {
+            jms: {
+                location: 'queue/SterlingOMS.CancelAbandonedOrder_SL.OUT',
+                account: 'JMS01',
+                archive: '',
+                archive_enabled: false,
+                archive_account: '',
+                message_count: 1000
+            },
+            staging: {
+                location: 'file:////gv1hqpfs01.babgsetc.pvt/File1/BOPS/SN/In/CancelReq/staging/',
+                archive: 'file:////gv1hqpfs01.babgsetc.pvt/File1/BOPS/SN/In/CancelReq/staging/archive/',
+                fileprefix: 'PGME_CancelReq_',
+                account: ''
+            },
+            consolidated: {
+                location: 'file:////gv1hqpfs01.babgsetc.pvt/File1/BOPS/SN/In/CancelReq/consolidated/',
+                archive: 'file:////gv1hqpfs01.babgsetc.pvt/File1/BOPS/SN/In/CancelReq/consolidated/archive/',
+                archive_enabled: true,
+                filename: 'PGME_CancelReq_',
+                account: ''
+            },
+            ftp: {
+                location: 'sftp://gv1hqpftp02.babgsetc.pvt:22/users/GMEProd/SN/In/CancelReq/',
+                account: 'StoreNetFTP'
+            }
+        },
+        orderacknowledge: {
+            jms: {
+                location: 'queue/SterlingOMS.OrderReleaseAck_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/orderacknowledge/'
+            },
+            channelname: 'http://gamestop.com/oms/orders/orderacknowledge/v1',
+            messagetype: 'http://gamestop.com/oms/orders/orderacknowledge/v1'
+        },
+		payment: {
+            jms: {
+                location: 'queue/SterlingOMS.PaymentEvent_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/payment/'
+            },
+            channelname: 'http://gamestop.com/oms/payment/v1',
+            messagetype: 'http://gamestop.com/oms/payment/v1'
+        },
+        orderbackorder: {
+            jms: {
+                location: 'queue/SterlingOMS.Backorder_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/orderbackorder/'
+            },
+            channelname: 'http://gamestop.com/oms/orders/orderbackorder/v1',
+            messagetype: 'http://gamestop.com/oms/orders/orderbackorder/v1'
+        },
+        ordercancel: {
+            jms: {
+                location: 'queue/SterlingOMS.OrderCancelUpdate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/ordercancel/'
+            },
+            messagetype: 'http://gamestop.com/oms/orders/ordercancel/v1',
+            channelname: 'http://gamestop.com/oms/orders/ordercancel/v1'
+        },
+        ordercreate: {
+            jms: {
+                location: 'queue/SterlingOMS.OrderCreate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/ordercreate/'
+            },
+            messagetype: 'http://gamestop.com/oms/orders/ordercreate/v1',
+            channelname: 'http://gamestop.com/oms/orders/ordercreate/v1'
+        },
+        orderrelease: {
+            jms: {
+                location: 'queue/SterlingOMS.OrderReleaseUpdate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/orderrelease/'
+            },
+            channelname: 'http://gamestop.com/oms/orders/orderrelease/v1',
+            messagetype: 'http://gamestop.com/oms/orders/orderrelease/v1'
+        },
+        orderchange: {
+            jms: {
+                location: 'queue/SterlingOMS.OrderUpdate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/orderchange/'
+            },
+            channelname: 'http://gamestop.com/oms/orders/orderchange/v1',
+            messagetype: 'http://gamestop.com/oms/orders/orderchange/v1'
+        },
+        orderschedule: {
+            jms: {
+                location: 'queue/SterlingOMS.OrderSchedule_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/orderschedule/'
+            },
+            messagetype: 'http://gamestop.com/oms/orders/orderschedule/v1',
+            channelname: 'http://gamestop.com/oms/orders/orderschedule/v1'
+        },
+        returncreate: {
+            jms: {
+                location: 'queue/SterlingOMS.CreateReturnOrder_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/returncreate/'
+            },
+            channelname: 'http://gamestop.com/oms/returns/returncreate/v1',
+            messagetype: 'http://gamestop.com/oms/returns/returncreate/v1'
+        },
+        shipmentchangestatus: {
+            jms: {
+                location: 'queue/SterlingOMS.ShipmentUpdate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/shipmentchangestatus/'
+            },
+            messagetype: 'http://gamestop.com/oms/orders/shipmentchangestatus/v1',
+            channelname: 'http://gamestop.com/oms/orders/shipmentchangestatus/v1'
+        },
+        shipmentinvoicecreate: {
+            jms: {
+                location: 'queue/SterlingOMS.ShipmentInvoiceUpdate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/shipmentinvoicecreate/'
+            },
+            messagetype: 'http://gamestop.com/oms/orders/shipmentinvoicecreate/v1',
+            channelname: 'http://gamestop.com/oms/orders/shipmentinvoicecreate/v1'
+        },
+        shipmentconfirm: {
+            jms: {
+                location: 'queue/SterlingOMS.ConfirmShip_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            s3: {
+                location: 's3:///gs-aws-omsevents-us-east-1-prod/shipmentconfirm/',
+            },
+            messagetype: 'http://gamestop.com/oms/orders/shipmentconfirm/v1',
+            channelname: 'http://gamestop.com/oms/orders/shipmentconfirm/v1'
+        },
+        storefulfillmentinventoryadjustment: {
+            jms: {
+                location: 'queue/SterlingOMS.InventoryUpdate_SL.OUT',
+                account: 'JBOSSJMS_VendorEDI',
+                message_count: 1000
+            },
+            messagetype: 'http://gamestop.com/orders/storefulfillment/inventoryadjustment/v1',
+            channelname: 'http://gamestop.com/orders/storefulfillment/inventoryadjustment/v1'
+        }
+    }
+}

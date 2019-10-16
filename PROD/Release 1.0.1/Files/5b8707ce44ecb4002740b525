@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderRelease AcknowledgeTS="20180731172618" CarrierServiceCode="75"
+    Createts="2018-07-31T16:14:44-05:00"
+    Modifyts="2018-07-31T16:14:44-05:00"
+    OrderDate="2018-07-31T16:13:49-05:00" OrderName="6180731161104054"
+    OrderReleaseKey="201807311614444328670315" ReleaseNo="1" ShipNode="GS_US_STORENET">
+    <Order EntryType="GS" OrderHeaderKey="201807311614434328670266" OrderNo="115569565">
+        <Extn ExtnOrderGroupID=""/>
+    </Order>
+    <PersonInfoShipTo AddressLine1="410 Peachtree Pkwy  Ste 256"
+        AddressLine2="Avenue at S. Forsyth" City="Cumming" Country="US"
+        DayPhone="7707810501" EMailID="dennisdulay@gamestop.com"
+        FirstName="accept" LastName="dulay" State="GA" ZipCode="30041-7397"/>
+    <OrderLine CarrierServiceCode="75" GiftFlag="N"
+        OrderLineKey="201807311614434328670268" PrimeLineNo="1" StatusQuantity="1.00">
+        <Item ItemID="900636"/>
+        <Extn ExtnDigitalContentID="" ExtnDigitalContentUID=""
+            ExtnGCRef="" ExtnIsLikeToLikeExchange="N" ExtnIsPreOrder="N"
+            ExtnLineItemId="" ExtnQuotationCallMade="N"
+            ExtnShipGroup="1" ExtnStoreName="5990"/>
+        <Instructions NumberOfInstructions="0"/>
+        <LineCharges/>
+        <LineTaxes>
+            <LineTax ChargeCategory="SalesTax" ChargeName=""
+                ChargeNameKey="20110616172911718504" InvoicedTax="0.00"
+                Reference_1="FORSYTH" Reference_2="" Reference_3=""
+                RemainingTax="0.42" Tax="0.42" TaxName="SalesTax" TaxPercentage="7.00"/>
+        </LineTaxes>
+        <OrderStatuses>
+            <OrderStatus Status="3200.100" StatusQty="1.00" TotalQuantity="1.00">
+                <Details
+                    ExpectedDeliveryDate="2018-07-31T16:14:44-05:00" ExpectedShipmentDate="2018-07-31T16:14:44-05:00"/>
+            </OrderStatus>
+        </OrderStatuses>
+        <LinePackListPriceInfo Tax="0.42" UnitPrice="5.99"/>
+    </OrderLine>
+</OrderRelease>
